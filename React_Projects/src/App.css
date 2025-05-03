@@ -1,0 +1,21 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.882);
+    color: rgb(130, 132, 132);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: cursive;
+}
+button{
+    padding: 0.5rem;
+    background-color: rgb(2, 2, 138);
+    color: aliceblue;
+    font-family: cursive;
+    margin: 0.5rem;
+    border: 3px solid rgba(0, 0, 0, 0.641);
+    font-size: 1rem;
+    border-radius: 5px;
+}

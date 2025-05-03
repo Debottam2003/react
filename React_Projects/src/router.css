@@ -1,0 +1,11 @@
+.nav{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    gap:20px;
+}
+.hometext,.logintext{
+    text-decoration: none;
+}
