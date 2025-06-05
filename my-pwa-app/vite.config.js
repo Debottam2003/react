@@ -9,7 +9,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'My Vite PWA',
+        name: 'DebText',
         short_name: 'VitePWA',
         description: 'My awesome Progressive Web App using Vite + React',
         theme_color: '#ffffff',

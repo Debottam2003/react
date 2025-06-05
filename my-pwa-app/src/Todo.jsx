@@ -71,7 +71,9 @@ function Todo() {
         maxWidth: "800px",
         margin: "0 auto",
         fontFamily: "Arial, sans-serif",
-        backgroundColor: color
+        backgroundColor: color,
+        boxShadow: "0 1px 5px rgba(0, 0, 0, 0.46)",
+        borderRadius: "5px"
       }}
     >
       <h1
@@ -120,6 +122,7 @@ function Todo() {
             backgroundColor: "#28a745",
             color: "#fff",
             cursor: "pointer",
+            boxShadow: "2px 3px 5px rgba(0, 0, 0, 0.91)",
           }}
         >
           Add➕
@@ -135,8 +138,8 @@ function Todo() {
               marginBottom: "10px",
               padding: "10px",
               borderRadius: "4px",
-              backgroundColor: "#f8f9fa",
-              boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+              boxShadow: "inset 2px 3px 5px rgba(144, 142, 142, 0.91)",
+              backgroundColor: "#efefef"
             }}
           >
             <h2
@@ -189,6 +192,7 @@ function Todo() {
                   backgroundColor: "#28a745",
                   color: "#fff",
                   cursor: "pointer",
+                  boxShadow: "2px 3px 5px rgba(0, 0, 0, 0.91)",
                 }}
               >
                 Save
@@ -205,6 +209,7 @@ function Todo() {
                 margin: "5px",
                 color: "#fff",
                 cursor: "pointer",
+                boxShadow: "2px 3px 5px rgba(0, 0, 0, 0.91)",
               }}
               onClick={() => {
                 edit(index);
@@ -222,6 +227,7 @@ function Todo() {
                 backgroundColor: "#dc3545",
                 color: "#fff",
                 cursor: "pointer",
+                boxShadow: "2px 3px 5px rgba(0, 0, 0, 0.91)",
               }}
             >
               Delete🗑️
