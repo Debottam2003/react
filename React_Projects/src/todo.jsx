@@ -19,15 +19,15 @@ function Todo() {
     }
 
     useEffect(() => {
-        localStorage.setItem('todolistdata', JSON.stringify(arr));
-    }, [arr]);
-
-    useEffect(() => {
         const storedData = localStorage.getItem('todolistdata');
         if (storedData) {
             setarr(JSON.parse(storedData));
         }
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem('todolistdata', JSON.stringify(arr));
+    }, [arr]);
 
     return (
         <>
@@ -47,7 +47,7 @@ function Todo() {
                 </button>
             </div>
             <ul style={{ listStyleType: 'none', padding: '0', textAlign: 'center' }}>
-                {arr.map((element, index) => (
+                {arr?.map((element, index) => (
                     <li key={index} style={{ margin: '10px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#f8f9fa', padding: '10px', borderRadius: '5px' }}>
                         <span>{element.work}</span>
                         <button
