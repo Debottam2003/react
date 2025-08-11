@@ -16,3 +16,7 @@ createRoot(root).render(<h1>hello world</h1>);
 // Compiles JSX into vanila js
 
 // Need bundler to compile the jsx in to vanila js
+
+// A bundler like Vite, Webpack, or Parcel compiles your JSX 
+// into plain JavaScript on your machine (server/dev side) 
+// before sending to the browser.
