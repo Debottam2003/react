@@ -20,3 +20,19 @@ createRoot(root).render(<h1>hello world</h1>);
 // A bundler like Vite, Webpack, or Parcel compiles your JSX 
 // into plain JavaScript on your machine (server/dev side) 
 // before sending to the browser.
+
+// 1. Vite’s dev server is built-in
+
+//     Vite includes its own development server, written in Node.js.
+
+//     That server code lives inside Vite’s npm package, not in your project folder.
+
+//     When you run:
+
+// npm run dev
+
+// …it’s basically doing:
+
+// vite dev
+
+// …and starting that internal Node server.
