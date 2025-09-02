@@ -1,0 +1,16 @@
+React always keeps a copy of the "last" Virtual DOM tree 
+in memory so it can compare against the "next" Virtual DOM tree on every render.
+
+React doesn’t "re-render the entire DOM". 
+Instead, it uses a virtual DOM + diffing (reconciliation) process:
+
+State update triggers a re-render of the component.
+When you call setData(recipedata), React re-renders the component that owns data.
+
+Virtual DOM diffing: React creates a new virtual DOM tree from your updated component render.
+
+Efficient patching: React compares the new virtual DOM with the previous one:
+
+If an element (e.g., a <div> representing a recipe) hasn’t changed, React leaves it alone in the real DOM.
+
+If a small part (like a likes_count value inside a <span>) changed, React only updates that node.

@@ -1,0 +1,26 @@
+Local Dev
+---------
+
+/ routes sends the index.html page + react converted into normal js
+ and js handles everything, specially routing, and this is a spa(single page application)
+
+and when enver not / route request is send like /about, /user ... these routes does not present,
+but fallback route(normal middle route) sends the index.html page and by js and onload event check the route and
+does the routing.
+
+But for Production(vercel)
+--------------------------
+if we donot provide 
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+
+the fall back route does not send a index.html file
+rather it send 404 error (Not found)
+
+we can thing that using this vercel.json file the fall back route send the index.html file 
+but actually the /about or /user ... converted in to / route when request is made
+but when response is received by the location.pathname comparison the routing and proper component loading is 
+done or handled by js.
