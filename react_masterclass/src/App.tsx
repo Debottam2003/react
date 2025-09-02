@@ -51,7 +51,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Data from "./Data";
-import { useEffect } from "react";
 
 type user = {
   name: string;
@@ -59,16 +58,6 @@ type user = {
 };
 
 function App() {
-  useEffect(() => {
-    const capital = async () => {
-      let response = await axios.get(
-        "https://debottamapi.onrender.com/debottamapi/china"
-      );
-      alert(response.data);
-    };
-    capital();
-  }, []);
-
   let { register, handleSubmit, reset } = useForm<user>();
   let submitHandler = async (data: user) => {
     // console.log();
