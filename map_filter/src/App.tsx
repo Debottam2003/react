@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-function App() {
-  const [notes, setNotes] = useState([]);
+function App(): any {
+  const [notes, setNotes] = useState<string[]>([]);
 
   function addNote() {
-    let newNote = prompt("Enter new note.");
+    let newNote: string | null = prompt("Enter new note.");
     if (newNote) {
-      setNotes((prevdata) => [...prevdata, newNote]);
+      setNotes((prevdata: string[]) => [...prevdata, newNote]);
     }
   }
 
-  function deleteHandler(index) {
+  function deleteHandler(index: number) {
     let newNotes = notes.filter((_, i) => i !== index);
     setNotes(newNotes);
   }
@@ -18,15 +18,14 @@ function App() {
   return (
     <div className="app">
       <h1 className="title">📝 STICKY NOTE APP</h1>
-      <button className="add-btn" onClick={addNote}>➕ Add Note</button>
+      <button className="add-btn" onClick={addNote}>
+        ➕ Add Note
+      </button>
       <div className="notes-container">
         {notes?.map((note, index) => (
           <div key={index} className="note">
             <h2>{note}</h2>
-            <button
-              className="delete-btn"
-              onClick={() => deleteHandler(index)}
-            >
+            <button className="delete-btn" onClick={() => deleteHandler(index)}>
               ❌ Delete
             </button>
           </div>
