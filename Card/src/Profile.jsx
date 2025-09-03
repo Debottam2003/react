@@ -23,6 +23,9 @@ function Profile() {
     }
   }, [previewurl]);
 
+  // If an HTML <form> element does not have an action attribute, then:
+  // By default, the browser submits the form data to the current page’s URL
+  // (the same URL where the form is located).
   return (
     <form
       style={{
