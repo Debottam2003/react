@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 // app.use(cors({
-//     origin: ["https://healthyfy-lzod.vercel.app", "http://localhost:5173"],
+//     origin: ["https://healthyfy-lzod.vercel.app", "http://localhost:5173", "http://192.168.183.80:5173"],
 //     credentials: true
 // }));
 
@@ -33,7 +33,8 @@ async function main() { // entry point of the application
     try {
         let { rows } = await pool.query("select name, cuisine, recipe, imageurl from recipes limit 20");
         app.listen(PORT, () => {
-            console.log('Server is listening and serving on port ', PORT);
+            console.log(`Local: http://localhost:${PORT}`);
+            // console.log(`Private(N/W): http://192.168.183.80:${PORT}`);
         });
     }
     catch (err) {
