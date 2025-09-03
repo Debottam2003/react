@@ -22,15 +22,46 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.get("/cardapi", (req, res) => {
-    res.sendFile("index.html");
+// app.use(express.static(path.join(__dirname, "dist")));
+
+// Express serves all files inside dist.
+// That means:
+
+// http://localhost:4000/ → will serve dist/index.html by default.
+
+// http://localhost:4000/style.css → will serve dist/assets/index.css.
+
+// http://localhost:4000/main.js → will serve dist/assets/index.js.
+
+// When you run a web app, your CSS, JavaScript, and static assets are always public.
+// The browser needs them to render your frontend, so anyone can “view source” or open DevTools and see them.
+
+// This is normal for all websites:
+
+// Any CSS file you serve → visible.
+
+// Any JS file you serve → visible(can even be prettified in DevTools).
+
+// Any images / fonts → visible.
+
+// 🔒 The important thing is what you put inside those files:
+
+// Don’t hardcode secrets(API keys, database passwords, private tokens) in your frontend code.
+
+// If you need to protect sensitive data, keep it in the backend and expose only what’s safe via API routes.
+
+// Use environment variables(process.env...) on the backend, and if you need a public 
+// API key(like for a 3rd - party service), make sure it’s intended to be public.
+
+app.get("/", (req, res) => {
+    return res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 app.get('/test', (req, res) => {
     res.send('Hello World');
 });
 
-app.get('/', async (req, res) => {
+app.get('/cardapi', async (req, res) => {
     try {
         let { rows } = await pgObj.query("SELECT * FROM card;");
         res.cookie('data', "rony", {
@@ -39,12 +70,16 @@ app.get('/', async (req, res) => {
             partitioned: true, // Enables partitioning
             maxAge: 60 * 1000, // 1 minute
         });
-        res.status(200).json(rows);
-
+        return res.status(200).json(rows);
     }
     catch (e) {
-        console.log(e);
+        console.log(e.message);
+        return res.status(500).json({ message: "Internal server error" });
     }
+});
+
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 app.listen(port, () => {
