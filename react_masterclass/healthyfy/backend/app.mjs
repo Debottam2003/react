@@ -4,7 +4,7 @@ import pool from './db.mjs';
 import router from './routes/routes.mjs';
 import cookieParser from 'cookie-parser';
 import dotenv from "dotenv";
-import { fileURLToPath } from "bun";
+import { fileURLToPath } from "url";
 import path from "path";
 
 const __filename = fileURLToPath(import.meta.url);

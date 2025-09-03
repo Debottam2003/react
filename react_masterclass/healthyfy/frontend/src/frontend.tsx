@@ -49,6 +49,17 @@ let router = createBrowserRouter([
 ]);
 
 const elem = document.getElementById("root")!;
+// That ! at the end isn’t specific to Bun — it comes from TypeScript, and it’s called the non-null assertion operator.
+
+// Here’s what it does:
+
+// document.getElementById("root") returns HTMLElement | null (because the element might not exist).
+
+// Normally, TypeScript would force you to handle the null case (e.g., with if (elem) checks).
+
+// By writing !, you’re telling the compiler:
+
+// “Trust me, this value will never be null or undefined at runtime.”
 const app = (
   <>
     <RouterProvider router={router} />
