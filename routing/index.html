@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/login" onclick="render(event)">Login</a>
+    <a href="/contact" onclick="render(event)">Contact</a>
+    <div id="root"><h2>This is the Home Page</h2></div>
+    <script>
+      function render(e) {
+        e.preventDefault();
+        let route = e.target.getAttribute("href");
+        window.history.pushState({}, "", route);
+        switch (route) {
+          case "/login":
+            document.getElementById("root").innerHTML =
+              "<h2>This is the Login page.</h2>";
+            break;
+          case "/contact":
+            document.getElementById("root").innerHTML =
+              "<h2>This is the Contact page.</h2>";
+            break;
+          default:
+            document.getElementById("root").innerHTML =
+              "<h2>404 Not Found</h2>";
+        }
+      }
+    </script>
+  </body>
+</html>

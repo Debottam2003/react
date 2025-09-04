@@ -1,0 +1,5 @@
+SPA: Single Page Application -> Single Route (Mostly '/' route which serves the index.html file and
+     entire routing is handled by frontend js and the routing is not actual routing js just changes the
+     url and do the component rendering).
+
+"" == "/" backend e http req this is resolved by browser
