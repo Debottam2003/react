@@ -1,0 +1,26 @@
+In React with JSX, the concept of children refers to the content nested between 
+the opening and closing tags of a component.
+
+👉 Think of it as a way to pass JSX or other components as props into a component.
+
+function Card({ children }) {
+  return <div className="card">{children}</div>;
+}
+
+export default function App() {
+  return (
+    <Card>
+      <h2>Hello</h2>
+      <p>This is inside the card.</p>
+    </Card>
+  );
+}
+
+<Card>
+  <p>Hello</p>
+</Card>
+
+{
+  children: <p>Hello</p>
+}
+
