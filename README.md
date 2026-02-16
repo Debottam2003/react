@@ -1,4 +1,4 @@
-![React Logo](ttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHd_XefGUsxpL7-vcK6_QfSRoPt7Z3heIIQ&s)
+![React Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHd_XefGUsxpL7-vcK6_QfSRoPt7Z3heIIQ&s)
 # React Learning Repository 🚀
 
 This repository is a comprehensive collection of **React examples, mini-projects, concept demonstrations, and practice applications** created while learning and exploring React.
