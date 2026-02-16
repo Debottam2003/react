@@ -86,7 +86,7 @@ To run any project locally:
 
 1. Clone the repository:
 
-   git clone https://github.com/Debottam2003/react.git
+   git clone https://github.com/Debottam2003/react
 
 2. Navigate into the repository:
 
